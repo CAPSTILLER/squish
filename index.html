@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Squish — shrink photos & videos</title>
+<meta name="theme-color" content="#111827"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg">
+<link rel="stylesheet" href="/src/style.css"></head><body>
+<header><h1>🍋 Squish</h1><p class="sub">by CAPSTILLER · gearup.wtf — all on your device, nothing uploaded</p></header>
+<main>
+<div class="tabs"><button id="tShrink" class="tab on">Shrink</button><button id="tBack" class="tab">Convert back</button></div>
+<p id="backNote" class="note hidden">Converting back makes files open anywhere (JPG/PNG/MP4). It restores <b>compatibility, not lost detail</b>. Keep originals of precious files (e.g. Google Drive) before deleting.</p>
+<label class="big pick">➕ Pick photos & videos<input id="files" type="file" multiple accept="image/*,video/*,.heic,.heif" hidden></label>
+<section id="opts" class="card">
+ <div id="shrinkOpts">
+  <label>Photo quality: <b id="qv">75</b><input id="q" type="range" min="30" max="95" value="75"></label>
+  <label>Photo max size <select id="maxd"><option value="0">Original</option><option value="4096">4096 px</option><option value="2560" selected>2560 px</option><option value="1920">1920 px</option></select></label>
+  <label>Video size <select id="vres"><option value="720" selected>720p</option><option value="1080">1080p</option><option value="0">Original</option></select></label>
+  <label>Video codec <select id="vcodec"><option value="h264" selected>H.264 MP4 (plays everywhere)</option><option value="h265">H.265 MP4 (smaller, slower)</option><option value="vp9">VP9 WebM (smaller, slowest)</option></select></label>
+  <label>Video quality <select id="crf"><option value="23">High</option><option value="28" selected>Balanced</option><option value="32">Small</option></select></label>
+ </div>
+ <div id="backOpts" class="hidden">
+  <label>Photos to <select id="bfmt"><option value="jpeg">JPG</option><option value="png">PNG (lossless, big)</option></select></label>
+  <p class="small">Videos become H.264 MP4.</p>
+ </div>
+</section>
+<button id="go" class="big go" disabled>Squish it</button>
+<ul id="list"></ul>
+<button id="zip" class="big hidden">⬇ Download all (zip)</button>
+<p class="small">Big videos are slow on phones — keep the screen on. Videos use ffmpeg in your browser (~30 MB one-time download).</p>
+</main><script type="module" src="/src/main.js"></script></body></html>

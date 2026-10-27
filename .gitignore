@@ -1,0 +1,8 @@
+node_modules
+.vercel
+dist
+out
+.cache
+cache
+test-out
+*.log
